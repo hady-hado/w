@@ -210,14 +210,6 @@
     },
     "links": [
       {
-        "url": "https://github.com",
-        "label": {
-          "ar": "GitHub",
-          "fr": "GitHub",
-          "en": "GitHub"
-        }
-      },
-      {
         "url": "mailto:s0plab@protonmail.com",
         "label": {
           "ar": "البريد",
@@ -384,5 +376,5 @@
       }
     }
   ],
-  "updatedAt": "2026-11-14T08:17:11.559Z"
+  "updatedAt": "2026-11-14T08:17:19.653Z"
 }
