@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-device="desktop">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin — SOP Lab</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#06070a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23c9f56b'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='17' font-weight='700' text-anchor='middle' fill='%2306070a'%3ES%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css?v=12">
+  <link rel="stylesheet" href="../assets/css/admin.css?v=12">
+</head>
+<body class="admin">
+
+  <div class="aurora" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../">
+        <span class="brand-mark">S</span>
+        <span class="brand-name">Admin panel</span>
+      </a>
+      <nav class="nav">
+        <a href="../">View site</a>
+        <a class="nav-admin" href="#" id="btn-logout">Lock</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap admin-main">
+
+    <!-- connection -------------------------------------------------- -->
+    <section class="panel" id="conn-panel">
+      <div class="panel-head">
+        <h2>1 · Connect the repository</h2>
+        <span class="conn-state" id="conn-status">not connected</span>
+      </div>
+
+      <p class="help">
+        The site is static, so edits are saved as commits to your GitHub repo through the
+        GitHub API. Paste a <strong>fine-grained personal access token</strong> with
+        <em>Contents: Read and write</em> on this repository only. It stays in this
+        browser's local storage — never in the site, never in the repo.
+      </p>
+
+      <form id="conn-form" class="grid-2" autocomplete="off">
+        <label class="field span-2">
+          <span>Access token</span>
+          <input type="password" id="token" placeholder="github_pat_…" spellcheck="false">
+        </label>
+        <label class="field">
+          <span>Owner</span>
+          <input type="text" id="owner" placeholder="your-username" spellcheck="false">
+        </label>
+        <label class="field">
+          <span>Repository</span>
+          <input type="text" id="repo" placeholder="sop-lab-site" spellcheck="false">
+        </label>
+        <label class="field">
+          <span>Branch</span>
+          <input type="text" id="branch" value="main" spellcheck="false">
+        </label>
+        <label class="field">
+          <span>Content file</span>
+          <input type="text" id="path" value="data/site.json" spellcheck="false">
+        </label>
+
+        <div class="row-actions span-2">
+          <button type="submit" class="btn btn-primary" id="btn-connect">Connect &amp; load</button>
+          <button type="button" class="btn btn-ghost" id="btn-forget">Forget token</button>
+          <span class="device-line" id="device-line"></span>
+        </div>
+      </form>
+    </section>
+
+    <!-- editor ------------------------------------------------------ -->
+    <section class="panel is-hidden" id="editor">
+      <div class="panel-head">
+        <h2>2 · Edit content</h2>
+        <span class="conn-state" id="file-state">—</span>
+      </div>
+
+      <div class="lang-bar">
+        <span class="lang-bar-label">Content language</span>
+        <div class="lang-switch" id="edit-lang" role="group" aria-label="Content language">
+          <button type="button" data-edit-lang="ar" lang="ar" aria-pressed="true">العربية</button>
+          <button type="button" data-edit-lang="fr" lang="fr" aria-pressed="false">Français</button>
+          <button type="button" data-edit-lang="en" lang="en" aria-pressed="false">English</button>
+        </div>
+        <span class="lang-hint" id="lang-hint">Arabic is the default language.</span>
+      </div>
+
+      <div class="group">
+        <h3 class="group-title">Shared — every language</h3>
+        <div class="grid-2">
+          <label class="field"><span>Group name</span><input type="text" id="b-name"></label>
+          <label class="field"><span>Monogram</span><input type="text" id="b-initials" maxlength="3"></label>
+          <label class="field"><span>Contact email</span><input type="email" id="b-email" dir="ltr"></label>
+          <label class="field"><span>Form endpoint</span><input type="text" id="b-form" dir="ltr" placeholder="https://formspree.io/f/xxxx"></label>
+        </div>
+        <p class="help" style="margin: 12px 0 0;">
+          Paste a form endpoint (Formspree, Web3Forms, Getform…) and the contact form posts
+          to it. Leave it empty and the form falls back to opening the visitor's mail app.
+        </p>
+      </div>
+
+      <div class="group">
+        <h3 class="group-title" id="copy-title">Text — العربية</h3>
+        <div class="grid-2">
+          <label class="field"><span>Kicker</span><input type="text" id="c-kicker" dir="auto"></label>
+          <label class="field"><span>Location</span><input type="text" id="c-location" dir="auto"></label>
+          <label class="field span-2"><span>Headline</span><input type="text" id="c-tagline" dir="auto"></label>
+          <label class="field"><span>Footer note</span><input type="text" id="c-short" dir="auto"></label>
+          <label class="field"><span>Team</span><input type="text" id="c-team" dir="auto"></label>
+          <label class="field span-2"><span>Intro</span><textarea id="c-intro" rows="3" dir="auto"></textarea></label>
+          <label class="field span-2"><span>About (blank line between paragraphs)</span><textarea id="c-about" rows="6" dir="auto"></textarea></label>
+          <label class="field"><span>Founded</span><input type="text" id="c-founded" dir="auto"></label>
+          <label class="field"><span>Focus</span><input type="text" id="c-focus" dir="auto"></label>
+          <label class="field span-2"><span>Status</span><input type="text" id="c-status" dir="auto"></label>
+        </div>
+      </div>
+
+      <div class="group">
+        <h3 class="group-title">Theme</h3>
+        <div class="grid-2">
+          <label class="field"><span>Accent colour</span><input type="color" id="b-accent"></label>
+          <label class="field">
+            <span>Font pair</span>
+            <select id="b-fonts">
+              <option value="alexandria">Alexandria + Inter</option>
+              <option value="plex">IBM Plex Sans Arabic + Inter</option>
+              <option value="rubik">Rubik + Inter</option>
+            </select>
+          </label>
+          <label class="field"><span>Corner radius (px)</span><input type="number" id="b-radius" min="0" max="40"></label>
+          <label class="field"><span>Aurora strength (0–2)</span><input type="number" id="b-aurora" min="0" max="2" step="0.1"></label>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-head">
+          <h3 class="group-title">Page sections</h3>
+          <div class="row-actions" style="margin: 0;">
+            <select id="add-section-type" style="min-width: 150px;">
+              <option value="hero">Hero</option>
+              <option value="products">Products</option>
+              <option value="text">Text / About</option>
+              <option value="stats">Numbers</option>
+              <option value="faq">FAQ</option>
+              <option value="gallery">Gallery</option>
+              <option value="cta">Call to action</option>
+              <option value="canvas">Freeform canvas</option>
+              <option value="contact">Contact</option>
+            </select>
+            <button type="button" class="btn btn-ghost btn-sm" id="btn-add-section">+ Add section</button>
+          </div>
+        </div>
+        <div class="sections-list" id="sections-list"></div>
+      </div>
+
+      <div class="group">
+        <div class="group-head">
+          <h3 class="group-title">Products</h3>
+          <button type="button" class="btn btn-ghost btn-sm" id="btn-add-product">+ Add product</button>
+        </div>
+        <div class="product-editor" id="products"></div>
+      </div>
+
+      <div class="group">
+        <div class="group-head">
+          <h3 class="group-title">Links</h3>
+          <button type="button" class="btn btn-ghost btn-sm" id="btn-add-link">+ Add link</button>
+        </div>
+        <div class="link-editor" id="links"></div>
+      </div>
+
+      <div class="save-bar">
+        <button type="button" class="btn btn-primary" id="btn-save">Save &amp; publish</button>
+        <button type="button" class="btn btn-ghost" id="btn-reload">Discard &amp; reload</button>
+        <span class="dirty" id="dirty-note">no changes</span>
+      </div>
+    </section>
+
+    <p class="footnote">
+      Saving commits <code>data/site.json</code> to <code id="foot-repo">—</code>.
+      GitHub Pages republishes in about a minute; every visitor then loads the new content.
+    </p>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="../assets/js/device.js?v=12"></script>
+  <script src="../assets/js/admin.js?v=12"></script>
+</body>
+</html>

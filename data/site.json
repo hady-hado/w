@@ -1,0 +1,251 @@
+{
+  "schema": 3,
+  "defaultLocale": "ar",
+  "brand": {
+    "name": "SOP Lab",
+    "initials": "S",
+    "email": "hello@example.com",
+    "formEndpoint": "",
+    "theme": {
+      "accent": "#c9f56b",
+      "radius": 20,
+      "aurora": 1,
+      "fonts": "alexandria"
+    },
+    "links": [
+      { "url": "https://github.com", "label": { "ar": "GitHub", "fr": "GitHub", "en": "GitHub" } },
+      { "url": "mailto:hello@example.com", "label": { "ar": "البريد", "fr": "Email", "en": "Email" } }
+    ],
+    "i18n": {
+      "ar": {
+        "kicker": "مجموعة برمجيات",
+        "location": "عن بُعد",
+        "tagline": "مجموعة صغيرة تبني برمجيات تعتمد عليها المتاجر كل يوم.",
+        "taglineShort": "برمجيات للمتاجر",
+        "intro": "نحن فريق صغير يدرس كيف تُستخدم برمجيات المتاجر فعليًا، ثم يبني النسخة التي نرغب في استخدامها بأنفسنا. أدوات صغيرة، سريعة، وتقول ما تفعله بصراحة.",
+        "about": "بدأ SOP Lab كمشروع جانبي: ثلاثة أشخاص يفكّكون برمجيات نقاط البيع التي تُفرض على المتاجر الصغيرة، ويسجّلون ما يحدث فعلًا كل يوم.\n\nتحوّلت تلك الدراسة إلى منتجات. كل أداة نطلقها تعمل على الكاشير، وتستمر بلا إنترنت، وتحتفظ بالبيانات على الجهاز الذي يملكها.",
+        "team": "ثلاثة أشخاص",
+        "founded": "2026",
+        "focus": "التجزئة ونقاط البيع",
+        "status": "مستقل"
+      },
+      "fr": {
+        "kicker": "groupe logiciel",
+        "location": "à distance",
+        "tagline": "Un petit groupe qui livre des logiciels sur lesquels les commerces tournent vraiment.",
+        "taglineShort": "logiciels pour commerces",
+        "intro": "Nous sommes une petite équipe qui étudie l'usage réel des logiciels de caisse, puis construit la version que nous voudrions utiliser nous-mêmes. Des outils simples, rapides, honnêtes sur ce qu'ils font.",
+        "about": "SOP Lab a commencé comme un projet parallèle : trois personnes démontant les logiciels de point de vente imposés aux petits commerces, et notant ce qui cloche chaque jour.\n\nCette étude est devenue des produits. Chaque outil tourne au comptoir, fonctionne sans internet et garde les données sur la machine qui les possède.",
+        "team": "3 personnes",
+        "founded": "2026",
+        "focus": "Commerce et point de vente",
+        "status": "Indépendant"
+      },
+      "en": {
+        "kicker": "software group",
+        "location": "remote",
+        "tagline": "A small group shipping software that shops actually run on.",
+        "taglineShort": "software for shops",
+        "intro": "We are a tiny team that studies how retail software is really used, then builds the version we would want to run ourselves. Small tools, fast to open, honest about what they do.",
+        "about": "SOP Lab started as a side project: three people taking apart the point-of-sale software that small shops are stuck with, and writing down what actually goes wrong every day.\n\nThat study turned into products. Every tool we ship runs on the counter, works when the internet does not, and keeps the data on the machine it belongs to.",
+        "team": "3 people",
+        "founded": "2026",
+        "focus": "Retail & POS tooling",
+        "status": "Independent"
+      }
+    }
+  },
+  "products": [
+    {
+      "id": "counter",
+      "glyph": "◧",
+      "image": "",
+      "status": "live",
+      "url": "",
+      "source": "",
+      "i18n": {
+        "ar": {
+          "name": "كاونتر",
+          "tagline": "نقطة بيع تفتح قبل أن ينهي العميل كلامه.",
+          "description": "بِع، اطبع الفاتورة، أغلق الدرج. يعمل محليًا على ويندوز مع قاعدة بيانات SQLite، فانقطاع الشبكة لا يوقف الطابور.",
+          "tags": ["نقاط بيع", "ويندوز", "SQLite"]
+        },
+        "fr": {
+          "name": "Counter",
+          "tagline": "Un point de vente qui s'ouvre avant que le client ait fini sa phrase.",
+          "description": "Vendre, imprimer, fermer la caisse. Local d'abord sous Windows avec SQLite intégré : une box en panne n'arrête pas la file.",
+          "tags": ["Caisse", "Windows", "SQLite"]
+        },
+        "en": {
+          "name": "Counter",
+          "tagline": "Point of sale that opens before your customer finishes talking.",
+          "description": "Sell, print a receipt, close the drawer. Runs local-first on Windows with an embedded SQLite store, so a dead router never stops a queue.",
+          "tags": ["POS", "Windows", "SQLite"]
+        }
+      }
+    },
+    {
+      "id": "stockroom",
+      "glyph": "▤",
+      "image": "",
+      "status": "beta",
+      "url": "",
+      "source": "",
+      "i18n": {
+        "ar": {
+          "name": "المخزن",
+          "tagline": "جرد ومشتريات بلا جداول بيانات.",
+          "description": "جرد يطابق نفسه، طلبات توريد تتذكّر المرة السابقة، وقائمة نقص تظهر في شاشة واحدة.",
+          "tags": ["جرد", "مشتريات", "سطح المكتب"]
+        },
+        "fr": {
+          "name": "Stockroom",
+          "tagline": "Stock et achats sans tableur.",
+          "description": "Des inventaires qui se réconcilient, des commandes fournisseurs qui se souviennent, une liste de ruptures sur un seul écran.",
+          "tags": ["Stock", "Achats", "Bureau"]
+        },
+        "en": {
+          "name": "Stockroom",
+          "tagline": "Inventory and purchasing without the spreadsheet.",
+          "description": "Stock counts that reconcile themselves, supplier orders that remember last time, and a low-stock list that fits on one screen.",
+          "tags": ["Inventory", "Purchasing", "Desktop"]
+        }
+      }
+    },
+    {
+      "id": "ledger",
+      "glyph": "▥",
+      "image": "",
+      "status": "soon",
+      "url": "",
+      "source": "",
+      "i18n": {
+        "ar": {
+          "name": "الدفتر",
+          "tagline": "أرقام نهاية اليوم كما يجب أن تُقرأ.",
+          "description": "صفحة واحدة للإقفال: ما بِيع، وكم كلّف، وما ينقص. تصدير إلى جدول لا يتذمّر منه المحاسب.",
+          "tags": ["تقارير", "تحليلات"]
+        },
+        "fr": {
+          "name": "Ledger",
+          "tagline": "Les chiffres de fin de journée, enfin lisibles.",
+          "description": "Une page pour la clôture : ce qui s'est vendu, ce que ça a coûté, ce qui manque. Export vers un tableur que votre comptable acceptera.",
+          "tags": ["Rapports", "Analytique"]
+        },
+        "en": {
+          "name": "Ledger",
+          "tagline": "End-of-day numbers you can actually read.",
+          "description": "One page for the close: what sold, what it cost, what is missing. Export to a sheet your accountant will not complain about.",
+          "tags": ["Reporting", "Analytics"]
+        }
+      }
+    }
+  ],
+  "sections": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "layout": "split",
+      "showVisual": true
+    },
+    {
+      "id": "products",
+      "type": "products",
+      "columns": 3,
+      "i18n": {
+        "ar": { "heading": "المنتجات" },
+        "fr": { "heading": "Produits" },
+        "en": { "heading": "Products" }
+      }
+    },
+    {
+      "id": "stats",
+      "type": "stats",
+      "i18n": {
+        "ar": {
+          "heading": "بأرقام",
+          "items": [
+            { "value": "3", "label": "أدوات في البناء" },
+            { "value": "0", "label": "سيرفرات مطلوبة" },
+            { "value": "100%", "label": "يعمل بلا إنترنت" }
+          ]
+        },
+        "fr": {
+          "heading": "En chiffres",
+          "items": [
+            { "value": "3", "label": "outils en chantier" },
+            { "value": "0", "label": "serveur requis" },
+            { "value": "100%", "label": "fonctionne hors ligne" }
+          ]
+        },
+        "en": {
+          "heading": "By numbers",
+          "items": [
+            { "value": "3", "label": "tools in progress" },
+            { "value": "0", "label": "servers required" },
+            { "value": "100%", "label": "works offline" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "about",
+      "type": "text",
+      "layout": "facts",
+      "i18n": {
+        "ar": { "heading": "من نحن", "body": "" },
+        "fr": { "heading": "À propos", "body": "" },
+        "en": { "heading": "About", "body": "" }
+      }
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "i18n": {
+        "ar": {
+          "heading": "أسئلة متكرّرة",
+          "items": [
+            { "q": "هل يعمل بدون إنترنت؟", "a": "نعم. كل أداة تحفظ بياناتها على الجهاز نفسه، وتعمل كاملة بلا اتصال." },
+            { "q": "أين تُخزَّن البيانات؟", "a": "على جهازك في قاعدة بيانات محلية. لا نرفع شيئًا إلى سيرفراتنا." },
+            { "q": "هل يحتاج تركيبًا معقّدًا؟", "a": "ملف واحد، بلا تبعيات. افتحه وابدأ البيع." }
+          ]
+        },
+        "fr": {
+          "heading": "Questions fréquentes",
+          "items": [
+            { "q": "Ça marche sans internet ?", "a": "Oui. Chaque outil garde ses données sur la machine et fonctionne entièrement hors ligne." },
+            { "q": "Où sont stockées les données ?", "a": "Chez vous, dans une base locale. Rien n'est envoyé sur nos serveurs." },
+            { "q": "L'installation est compliquée ?", "a": "Un seul fichier, aucune dépendance. Ouvrez, vendez." }
+          ]
+        },
+        "en": {
+          "heading": "Frequently asked",
+          "items": [
+            { "q": "Does it work without internet?", "a": "Yes. Every tool keeps its data on the machine and runs fully offline." },
+            { "q": "Where is the data stored?", "a": "On your machine, in a local database. Nothing is uploaded to our servers." },
+            { "q": "Is the install complicated?", "a": "One file, no dependencies. Open it and start selling." }
+          ]
+        }
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "i18n": {
+        "ar": { "heading": "تريد تجربته على كاشيرك؟", "body": "اكتب لنا سطرًا عن متجرك، ونرسل لك نسخة تجريبية.", "buttonLabel": "تواصل معنا", "buttonUrl": "#contact" },
+        "fr": { "heading": "Envie de l'essayer sur votre caisse ?", "body": "Écrivez-nous une ligne sur votre commerce, on vous envoie une version d'essai.", "buttonLabel": "Nous écrire", "buttonUrl": "#contact" },
+        "en": { "heading": "Want to try it on your counter?", "body": "Tell us one line about your shop and we'll send a trial build.", "buttonLabel": "Get in touch", "buttonUrl": "#contact" }
+      }
+    },
+    {
+      "id": "contact",
+      "type": "contact",
+      "i18n": {
+        "ar": { "heading": "تواصل" },
+        "fr": { "heading": "Contact" },
+        "en": { "heading": "Contact" }
+      }
+    }
+  ],
+  "updatedAt": "2026-11-14T00:00:00.000Z"
+}
