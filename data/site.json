@@ -218,7 +218,7 @@
         }
       },
       {
-        "url": "mailto:hello@example.com",
+        "url": "mailto:s0plab@protonmail.com",
         "label": {
           "ar": "البريد",
           "fr": "Email",
@@ -384,5 +384,5 @@
       }
     }
   ],
-  "updatedAt": "2026-11-14T06:48:00.115Z"
+  "updatedAt": "2026-11-14T08:17:11.559Z"
 }
